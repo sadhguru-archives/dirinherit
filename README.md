@@ -1,4 +1,4 @@
-# Directory Permission Sync
+# dirinherit
 
 A Linux service that automatically maintains consistent ownership and permissions when files and directories are moved or created. The daemon watches a directory tree and ensures that any content moved into or created within a directory inherits the parent directory's ownership and predefined permission modes.
 
