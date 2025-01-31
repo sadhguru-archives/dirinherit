@@ -1,0 +1,23 @@
+[Unit]
+Description=Inotify-based Permission Inheritance
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=/opt/dwara/bin/inotify-inherit.sh
+Restart=on-failure
+RestartSec=5
+User=root
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+
+# Process management
+KillMode=control-group
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target
